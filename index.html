@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="icon" type="image" href="/images/check-list.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="task">Task</label>
+          <input type="text" id="task" placeholder="Enter task" required />
+        </div>
+        <div class="form-group">
+          <label for="due-date">Due Date</label>
+          <input type="date" id="due-date" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Category/Tag</label>
+          <input
+            type="text"
+            id="category"
+            placeholder="Enter category (e.g., Work, Personal)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="priority">Priority</label>
+          <select id="priority" required>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="filter-buttons">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('completed')">Completed</button>
+        <button onclick="filterTasks('pending')">Pending</button>
+      </div>
+
+      <ul class="task-list" id="task-list"></ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
